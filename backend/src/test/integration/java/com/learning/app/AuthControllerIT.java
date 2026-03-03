@@ -72,4 +72,13 @@ class AuthControllerIT {
         mockMvc.perform(get("/api/system/ping"))
             .andExpect(status().isUnauthorized());
     }
+
+    @Test
+    void shouldExposeHealthEndpointWithoutCredentials() throws Exception {
+        mockMvc.perform(get("/api/system/health"))
+            .andExpect(status().isOk())
+            .andExpect(jsonPath("$.service").value("learning-backend"))
+            .andExpect(jsonPath("$.status").value("ok"))
+            .andExpect(jsonPath("$.time").isNotEmpty());
+    }
 }

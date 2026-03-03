@@ -1,0 +1,5 @@
+create a web app that is suitable for wide variety of features implementations including machine learning, deep learning, reinforcement learning, agi, artificial superintelligence, etc. Tech stack: front end: React, typescript, vite, and related. backend tech stack: Java, SpringBoot. Database: postgres. Initially create a login screen and landing page once login succeeds. initial login credentials: admin/admin123. App's title: Learning. Use this title in the login screen as well as in landing page (main page once login succeeds). check with me before making an assumption, just to make sure we get it right.
+
+1. Yes (monorepo with appropriate folders, include separate folder for unit and integration testing for both frontend and backend). 2. Basicl login for now, we will come back to jwt later. 3. Hashed in DB, use encryption whereever possible to make it sure. 4. Yes, starter dashboard 5. include docker-compose for Postgres. use docker compose for frontend and backend combined application running as well if possible.
+
+
