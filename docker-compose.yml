@@ -1,0 +1,41 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: learning-postgres
+    environment:
+      POSTGRES_DB: learningdb
+      POSTGRES_USER: learning_user
+      POSTGRES_PASSWORD: learning_password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U learning_user -d learningdb"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./backend
+    container_name: learning-backend
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/learningdb
+      SPRING_DATASOURCE_USERNAME: learning_user
+      SPRING_DATASOURCE_PASSWORD: learning_password
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: learning-frontend
+    depends_on:
+      - backend
+    ports:
+      - "5175:80"
+
+volumes:
+  pgdata:

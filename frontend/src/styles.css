@@ -1,0 +1,118 @@
+:root {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #102126;
+  background: radial-gradient(circle at top right, #d8f2f0, #f3f6f7 55%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 960px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 20px 48px rgba(16, 33, 38, 0.12);
+  padding: 32px;
+}
+
+.login-card {
+  max-width: 420px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 2rem;
+}
+
+.subtitle {
+  margin: 0 0 24px;
+  color: #4b6268;
+}
+
+form {
+  display: grid;
+  gap: 10px;
+}
+
+label {
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+input {
+  border: 1px solid #c5d3d8;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: 2px solid #1d7f8c;
+  border-color: #1d7f8c;
+}
+
+button {
+  margin-top: 12px;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  background: #1d7f8c;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.error {
+  margin: 4px 0;
+  color: #b42318;
+  font-size: 0.95rem;
+}
+
+.welcome {
+  margin-top: 0;
+  color: #4b6268;
+}
+
+.logout-button {
+  width: 140px;
+}
+
+.grid {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.grid article {
+  border: 1px solid #d5e2e6;
+  border-radius: 12px;
+  padding: 16px;
+  background: #f8fbfc;
+}
+
+.grid h2 {
+  margin-top: 0;
+  font-size: 1.1rem;
+}
