@@ -13,3 +13,7 @@ and this project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.ht
 - Docker Compose deployment for local stack.
 - Frontend and backend unit/integration testing foundations.
 - Open-source governance and contributor documentation.
+
+### Changed
+- Upgraded backend Java runtime/toolchain to Java 25.
+- Updated backend build/test Docker commands in project docs to `maven:3.9-eclipse-temurin-25`.

@@ -15,7 +15,7 @@ Thank you for contributing to Learning.
 4. Run tests:
    - Frontend unit: `cd frontend && npm run test:unit`
    - Frontend integration: `cd frontend && npm run test:integration`
-   - Backend verify: `docker run --rm -v "$PWD/backend":/app -w /app maven:3.9-eclipse-temurin-21 mvn -B verify`
+   - Backend verify: `docker run --rm -v "$PWD/backend":/app -w /app maven:3.9-eclipse-temurin-25 mvn -B verify`
 
 ## Branch and Commit Guidance
 - Keep each pull request focused on one change.

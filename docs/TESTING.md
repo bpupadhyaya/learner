@@ -16,7 +16,7 @@
 - Unit tests: service/controller/config and model behavior.
 - Integration tests: Spring context + API contract validation.
 - Command:
-  - `docker run --rm -v "$PWD/backend":/app -w /app maven:3.9-eclipse-temurin-21 mvn -B verify`
+  - `docker run --rm -v "$PWD/backend":/app -w /app maven:3.9-eclipse-temurin-25 mvn -B verify`
 
 ## Coverage Expectations
 - Frontend scripts enforce strict coverage thresholds.

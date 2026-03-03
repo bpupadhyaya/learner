@@ -16,7 +16,7 @@ Frontend:
 - `npm run test:integration`
 
 Backend:
-- `docker run --rm -v "$PWD/backend":/app -w /app maven:3.9-eclipse-temurin-21 mvn -B verify`
+- `docker run --rm -v "$PWD/backend":/app -w /app maven:3.9-eclipse-temurin-25 mvn -B verify`
 
 ## Common Tasks
 - Rebuild clean: `docker compose down -v && docker compose build --no-cache && docker compose up -d`

@@ -6,7 +6,7 @@ The project is intentionally structured as a clean base so contributors can exte
 
 ## Current Features
 - React + TypeScript + Vite frontend
-- Java 21 + Spring Boot backend
+- Java 25 + Spring Boot backend
 - PostgreSQL persistence
 - Docker Compose local deployment
 - Login flow with seeded admin user
@@ -46,7 +46,7 @@ npm run test:integration
 
 Backend (Dockerized Maven):
 ```bash
-docker run --rm -v "$PWD/backend":/app -w /app maven:3.9-eclipse-temurin-21 mvn -B verify
+docker run --rm -v "$PWD/backend":/app -w /app maven:3.9-eclipse-temurin-25 mvn -B verify
 ```
 
 ## Open Source Docs
