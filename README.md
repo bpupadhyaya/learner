@@ -96,6 +96,7 @@ docker run --rm -v "$PWD":/workspace -w /workspace/backend maven:3.9-eclipse-tem
 - [Architecture](docs/ARCHITECTURE.md)
 - [Development Guide](docs/DEVELOPMENT.md)
 - [Testing Strategy](docs/TESTING.md)
+- [Implemented Features Checklist](docs/IMPLEMENTED_FEATURES_CHECKLIST.md)
 - [Roadmap](docs/ROADMAP.md)
 - [Release Process](docs/RELEASE.md)
 - [Changelog](CHANGELOG.md)
