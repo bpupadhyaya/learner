@@ -1,7 +1,7 @@
 :root {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #102126;
-  background: radial-gradient(circle at top right, #d8f2f0, #f3f6f7 55%);
+  color: #e6edf7;
+  background: radial-gradient(circle at top right, #1b2740, #0f172a 55%);
 }
 
 * {
@@ -25,8 +25,8 @@ body {
   width: 100%;
   max-width: 960px;
   border-radius: 16px;
-  background: #ffffff;
-  box-shadow: 0 20px 48px rgba(16, 33, 38, 0.12);
+  background: #131c2e;
+  box-shadow: 0 20px 48px rgba(4, 8, 20, 0.5);
   padding: 32px;
 }
 
@@ -41,7 +41,7 @@ h1 {
 
 .subtitle {
   margin: 0 0 24px;
-  color: #4b6268;
+  color: #c9d4e6;
 }
 
 form {
@@ -55,15 +55,17 @@ label {
 }
 
 input {
-  border: 1px solid #c5d3d8;
+  border: 1px solid #33405d;
   border-radius: 10px;
   padding: 12px;
   font-size: 1rem;
+  background: #0f172a;
+  color: #e6edf7;
 }
 
 input:focus {
-  outline: 2px solid #1d7f8c;
-  border-color: #1d7f8c;
+  outline: 2px solid #2f81f7;
+  border-color: #2f81f7;
 }
 
 button {
@@ -71,8 +73,8 @@ button {
   border: none;
   border-radius: 10px;
   padding: 12px;
-  background: #1d7f8c;
-  color: white;
+  background: #2f81f7;
+  color: #ffffff;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
@@ -85,13 +87,13 @@ button:disabled {
 
 .error {
   margin: 4px 0;
-  color: #b42318;
+  color: #ff7b8a;
   font-size: 0.95rem;
 }
 
 .welcome {
   margin-top: 0;
-  color: #4b6268;
+  color: #c9d4e6;
 }
 
 .logout-button {
@@ -106,10 +108,10 @@ button:disabled {
 }
 
 .grid article {
-  border: 1px solid #d5e2e6;
+  border: 1px solid #33405d;
   border-radius: 12px;
   padding: 16px;
-  background: #f8fbfc;
+  background: #0f172a;
 }
 
 .grid h2 {
