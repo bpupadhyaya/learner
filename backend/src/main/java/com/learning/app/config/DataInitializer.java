@@ -17,7 +17,8 @@ public class DataInitializer {
                 AppUser adminUser = new AppUser(
                     "admin",
                     passwordEncoder.encode("admin123"),
-                    "Administrator"
+                    "Administrator",
+                    "ADMIN"
                 );
                 return java.util.Optional.of(userRepository.save(adminUser));
             });

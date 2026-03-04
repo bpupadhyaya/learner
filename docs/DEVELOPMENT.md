@@ -16,7 +16,16 @@ Frontend:
 - `npm run test:integration`
 
 Backend:
-- `docker run --rm -v "$PWD/backend":/app -w /app maven:3.9-eclipse-temurin-25 mvn -B verify`
+- Unit: `docker run --rm -v "$PWD":/workspace -w /workspace/backend maven:3.9-eclipse-temurin-25 mvn -B -Dskip.integration.tests=true test`
+- Integration: `docker run --rm -v "$PWD":/workspace -w /workspace/backend maven:3.9-eclipse-temurin-25 mvn -B -Dskip.unit.tests=true verify`
+
+## CI/CD
+- CI: `.github/workflows/ci.yml`
+  - Runs frontend unit/integration gates separately
+  - Runs backend unit/integration gates separately
+  - Validates container builds after all test gates pass
+- CD: `.github/workflows/cd.yml`
+  - On `main`, publishes backend/frontend images to GHCR
 
 ## Common Tasks
 - Rebuild clean: `docker compose down -v && docker compose build --no-cache && docker compose up -d`

@@ -13,10 +13,10 @@
 4. Frontend transitions to dashboard on success.
 
 ## Current Auth Model
-- Basic credential check endpoint.
+- JWT-based authentication with access and refresh tokens.
 - Seeded admin account (`admin`).
 - Password stored as BCrypt hash.
-- JWT/session model is planned but not yet implemented.
+- Protected endpoints validated through `JwtAuthenticationFilter`.
 
 ## Code Structure
 - `frontend/src`: UI and API client
@@ -25,5 +25,6 @@
 - `backend/src/test`: unit and integration tests
 
 ## Quality Gates
-- Frontend tests enforce 100% thresholds for configured coverage metrics.
-- Backend uses JaCoCo coverage checks in Maven `verify`.
+- Frontend unit and integration tests enforce separate 100% coverage thresholds.
+- Backend unit and integration tests each have independent JaCoCo 100% gates.
+- CI executes separate unit/integration jobs before container build validation.

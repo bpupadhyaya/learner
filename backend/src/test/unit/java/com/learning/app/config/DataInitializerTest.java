@@ -20,7 +20,7 @@ class DataInitializerTest {
     void shouldNotCreateAdminWhenAlreadyPresent() throws Exception {
         UserRepository repository = mock(UserRepository.class);
         PasswordEncoder encoder = mock(PasswordEncoder.class);
-        when(repository.findByUsername("admin")).thenReturn(Optional.of(new AppUser("admin", "hash", "Administrator")));
+        when(repository.findByUsername("admin")).thenReturn(Optional.of(new AppUser("admin", "hash", "Administrator", "ADMIN")));
 
         DataInitializer initializer = new DataInitializer();
         CommandLineRunner runner = initializer.seedInitialUser(repository, encoder);

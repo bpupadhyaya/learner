@@ -24,13 +24,21 @@ public class AppUser {
     @Column(name = "display_name", nullable = false)
     private String displayName;
 
+    @Column(name = "role_name", nullable = false)
+    private String role;
+
     public AppUser() {
     }
 
     public AppUser(String username, String passwordHash, String displayName) {
+        this(username, passwordHash, displayName, "ADMIN");
+    }
+
+    public AppUser(String username, String passwordHash, String displayName, String role) {
         this.username = username;
         this.passwordHash = passwordHash;
         this.displayName = displayName;
+        this.role = role;
     }
 
     public Long getId() {
@@ -47,5 +55,9 @@ public class AppUser {
 
     public String getDisplayName() {
         return displayName;
+    }
+
+    public String getRole() {
+        return role;
     }
 }

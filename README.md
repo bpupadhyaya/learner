@@ -9,8 +9,16 @@ The project is intentionally structured as a clean base so contributors can exte
 - Java 25 + Spring Boot backend
 - PostgreSQL persistence
 - Docker Compose local deployment
-- Login flow with seeded admin user
+- JWT-based login flow with seeded admin user
+- Access token + refresh token support
+- Authenticated profile endpoint (`/api/auth/me`)
 - Logout flow on landing/dashboard page
+- In-app navigation for `Dashboard`, `Modules`, and `Profile` sections
+- Product-ready module view for ML/DL/RL/AGI feature expansion
+- ML/AI foundation APIs:
+  - Model registry
+  - Training job submission stubs
+  - Experiment stubs
 - Unit + integration test structure for frontend and backend
 
 ## Quick Start
@@ -29,6 +37,20 @@ Initial credentials:
 
 Note: Passwords are stored as BCrypt hashes.
 
+Auth endpoints:
+- `POST /api/auth/login`
+- `POST /api/auth/refresh`
+- `POST /api/auth/logout`
+- `GET /api/auth/me` (requires `Authorization: Bearer <accessToken>`)
+
+ML foundation endpoints (require `Authorization: Bearer <accessToken>`):
+- `GET /api/ml/models`
+- `POST /api/ml/models`
+- `GET /api/ml/training-jobs`
+- `POST /api/ml/training-jobs`
+- `GET /api/ml/experiments`
+- `POST /api/ml/experiments`
+
 ## Project Structure
 - `frontend/`: React app, API client, tests
 - `backend/`: Spring Boot API, auth/domain logic, tests
@@ -44,10 +66,25 @@ npm run test:unit
 npm run test:integration
 ```
 
-Backend (Dockerized Maven):
+Backend unit gate (Dockerized Maven):
 ```bash
-docker run --rm -v "$PWD/backend":/app -w /app maven:3.9-eclipse-temurin-25 mvn -B verify
+docker run --rm -v "$PWD":/workspace -w /workspace/backend maven:3.9-eclipse-temurin-25 mvn -B -Dskip.integration.tests=true test
 ```
+
+Backend integration gate (Dockerized Maven):
+```bash
+docker run --rm -v "$PWD":/workspace -w /workspace/backend maven:3.9-eclipse-temurin-25 mvn -B -Dskip.unit.tests=true verify
+```
+
+## CI/CD
+- CI workflow: [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
+  - Frontend unit coverage gate
+  - Frontend integration coverage gate
+  - Backend unit coverage gate
+  - Backend integration coverage gate
+  - Container build validation
+- CD workflow: [`.github/workflows/cd.yml`](.github/workflows/cd.yml)
+  - Builds and publishes backend/frontend images to GHCR on `main`
 
 ## Open Source Docs
 - [Contributing](CONTRIBUTING.md)
